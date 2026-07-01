@@ -1,10 +1,10 @@
 
 /* 
-@title: maze_game_starter
-@description: A simple template to help you get started with making a maze game.
-@author: Cheru Berhanu
+@title: Witch Hat Run
+@description: You play as a mischievous witch's hat trying to find Salem (the Witch's cat) in the labyrinth of the Witch's home! Maneuver your way through the mystical and magical obstacles and travel through the mysterious cauldrons to try to get to Salem! Good luck!
+@author: Nathan LC
 @tags: []
-@addedOn: 2023-08-08
+@addedOn: 01-07-2026
 */
 
     const player = "p"
