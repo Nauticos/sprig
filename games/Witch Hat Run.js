@@ -21,6 +21,7 @@
     const endcat3 = "C"
     const endcat4 = "D"
     const endcat5 = "E"
+    const redx = "X"
     const melody = tune`
 500: C4~500,
 15500`
@@ -79,23 +80,23 @@ setLegend(
 2000000333000000
 2000000000000000
 2200000000000022` ],
-  [ box, bitmap`
-9999999999999999
-99CCCCCCCCCCCC99
-9C9CCCCCCCCCC9C9
-9CC9CCCCCCCC9CC9
-9CCC99999999CCC9
-9CCC99999999CCC9
-9CCC99CCCC99CCC9
-9CCC99CCCC99CCC9
-9CCC99CCCC99CCC9
-9CCC99CCCC99CCC9
-9CCC99999999CCC9
-9CCC99999999CCC9
-9CC9CCCCCCCC9CC9
-9C9CCCCCCCCCC9C9
-99CCCCCCCCCCCC99
-9999999999999999` ],
+  [ redx, bitmap`
+33............33
+333..........333
+.333........333.
+..333......333..
+...333....333...
+....333..333....
+.....333333.....
+......3333......
+......3333......
+.....333333.....
+....333..333....
+...333....333...
+..333......333..
+.333........333.
+333..........333
+33............33` ],
 	[ endcat3, bitmap`
 2222222222222222
 2222222222222222
@@ -282,7 +283,24 @@ CCCCCCCCCCCCCCCC
 ..0LLLLLLLLLL0..
 ...0000000000...
 ................
-................` ]
+................` ],
+[ box, bitmap`
+9999999999999999
+99CCCCCCCCCCCC99
+9C9CCCCCCCCCC9C9
+9CC9CCCCCCCC9CC9
+9CCC99999999CCC9
+9CCC99999999CCC9
+9CCC99CCCC99CCC9
+9CCC99CCCC99CCC9
+9CCC99CCCC99CCC9
+9CCC99CCCC99CCC9
+9CCC99999999CCC9
+9CCC99999999CCC9
+9CC9CCCCCCCC9CC9
+9C9CCCCCCCCCC9C9
+99CCCCCCCCCCCC99
+9999999999999999` ]
 )
 
 
@@ -349,8 +367,64 @@ const levels = [
     wwwwwwwwww
     `,
     map`
+    wwwwwwwwwwwwww
+    wpb...b......w
+    ww...www...w.w
+    wwwwwwwwwwww.w
+    wwwwwwwwww...w
+    wR........b..w
+    wwwwwwwwww.www
+    wwwwwwwwwwwwww
+    wG..........gw
+    wwwwwwwwwwwwww
+    `,
+    map`
+    wwwwwwwwwwwwwww
+    wp............w
+    wwwwwwwwwwwww.w
+    w...........w.w
+    w.wwwwwwwww.w.w
+    w.wg........w.w
+    w.wwwwwwwwwww.w
+    w.............w
+    wwwwwwwwwwwwwww
+    `,
+    map`
+    wwwwwwwwwwwwwww
+    wpb..........Xw
+    wwwwwwwwwwwwwww
+    wG........gwRww
+    wwwwwwwwwwwwwww
+    `,
+    map`
+    wwwwwwwwwwwwwww
+    wG............w
+    wwwwwwwwwwwww.w
+    w...w...w...w.w
+    w.w.w.w.w.w.w.w
+    w.w...w...w...w
+    w.wwwwwwwwwwwww
+    w.........pwRgw
+    wwwwwwwwwwwwwww
+    `,
+    map`
+    wwwwwwwwwwwwwww
+    wp.lgw..b.w...w
+    wwbwwwwkw.w.w.w
+    ww.wwwwww...w.w
+    ww.wwwwwwwwww.w
+    ww.wwwwwwwwwwRw
+    ww.wwwwwwwwwwww
+    ww.ww.b..w...ww
+    ww....w.w..w..w
+    ww.wwww...wwwGw
+    wwwwwwwwwwwwwww
+    `,
+    map`
     wwwwwwwwwwwwwwwwww
-    wp..............cw
+    wwwwww...www...www
+    wp..w..w..w..w..cw
+    www...www...wwwwww
     wwwwwwwwwwwwwwwwww
     `,
     map`
@@ -387,6 +461,10 @@ onInput("w", () => {
 onInput("a", () => {
   getFirst(player).x -= 1; //
   playTune(melody)
+});
+
+onInput("i", () => {
+  setMap(levels[level])
 });
 
 // these get run after every input
@@ -442,6 +520,25 @@ afterInput(() => {
       addSprite(6,6, player);
     }
   }
+
+  if (level == 9) {
+    const XCovered = tilesWith(redx, box);
+    if (XCovered.length >= 1) {
+        clearTile(13,1)
+        addSprite(13,1, box)
+        clearTile(12,2)
+        }
+    }
+
+  if (level == 11) {
+    const keyCovered = tilesWith(player, key);
+    if (keyCovered.length >= 1) {
+      clearTile(3,1);
+      clearTile(7,2);
+      addSprite(7,2, player);
+    }
+  }
+  
     
   // Portals (Using 'else if' to prevent infinite loop crashes)
   const redPortalsCovered = tilesWith(player, Rportal);
