@@ -3,7 +3,7 @@
 @title: Witch Hat Run
 @description: You play as a mischievous witch's hat trying to find Salem (the Witch's cat) in the labyrinth of the Witch's home! Maneuver your way through the mystical and magical obstacles and travel through the mysterious cauldrons to try to get to Salem! Good luck!
 @author: Nathan LC
-@tags: []
+@tags: ['game','maze','puzzle','strategy','rpg']
 @addedOn: 01-07-2026
 */
 
@@ -411,13 +411,13 @@ const levels = [
     wwwwwwwwwwwwwww
     wp.lgw..b.w...w
     wwbwwwwkw.w.w.w
-    ww.wwwwww...w.w
-    ww.wwwwwwwwww.w
-    ww.wwwwwwwwwwRw
-    ww.wwwwwwwwwwww
-    ww.ww.b..w...ww
-    ww....w.w..w..w
-    ww.wwww...wwwGw
+    ww.ww.www...w.w
+    ww.ww...wwwww.w
+    ww.ww.w.w...wRw
+    ww.ww.w.w.w.www
+    ww.ww.w.w.w..ww
+    ww...bw.w.ww..w
+    ww.w..w...wwwGw
     wwwwwwwwwwwwwww
     `,
     map`
