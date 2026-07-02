@@ -4,7 +4,7 @@
 @description: You play as a mischievous witch's hat trying to find Salem (the Witch's cat) in the labyrinth of the Witch's home! Maneuver your way through the mystical and magical obstacles and travel through the mysterious cauldrons to try to get to Salem! Good luck!
 @author: Nathan LC
 @tags: ['game','maze','puzzle','strategy','rpg']
-@addedOn: 01-07-2026
+@addedOn: 2026-07-02
 */
 
     const player = "p"
